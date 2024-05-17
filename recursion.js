@@ -1,18 +1,60 @@
-/** product: calculate the product of an array of numbers. */
+/**
+ * Finds the product of an array of numbers.
+ *
+ * Example
+ * console.log(product([2, 3, 4])); // 24
+ *
+ * @param {number[]} arr - The array of numbers.
+ * @returns {number} The product of the numbers in the array.
+ */
+function product(arr) {
+  if (arr.length === 0) return 1;
+  return arr[0] * product(arr.slice(1));
+}
 
-function product(nums) {}
+/**
+ * Returns the length of the longest word in an array of words.
+ *
+ * Example
+ * console.log(longest(["hello", "hi", "hola"]));  // 5
+ *
+ * @param {string[]} words - The array of words.
+ * @returns {number} The length of the longest word.
+ */
+function longest(words) {
+  if (words.length === 0) return 0;
+  return Math.max(words[0].length, longest(words.slice(1)));
+}
 
-/** longest: return the length of the longest word in an array of words. */
+/**
+ * Returns a string of every other character.
+ *
+ * Example
+ * console.log(everyOther("hello"));  // "hlo"
+ *
+ * @param {string} str - The input string.
+ * @returns {string} A string of every other character.
+ */
+function everyOther(str) {
+  if (str.length === 0) return "";
+  return str[0] + everyOther(str.slice(2));
+}
 
-function longest(words) {}
-
-/** everyOther: return a string with every other letter. */
-
-function everyOther(str) {}
-
-/** isPalindrome: checks whether a string is a palindrome or not. */
-
-function isPalindrome(str) {}
+/**
+ * Checks if a string is a palindrome.
+ *
+ * Example
+ * console.log(isPalindrome("tacocat"));  // true
+ * console.log(isPalindrome("tacodog"));  // false
+ *
+ * @param {string} str - The input string.
+ * @returns {boolean} True if the string is a palindrome, otherwise false.
+ */
+function isPalindrome(str) {
+  if (str.length <= 1) return true;
+  if (str[0] !== str[str.length - 1]) return false;
+  return isPalindrome(str.slice(1, -1));
+}
 
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
 
